@@ -482,3 +482,5 @@ $RECYCLE.BIN/
 *.swp
 API/appsettings.json
 API/sd.db
+API/sd.db-wal
+API/sd.db-shm
