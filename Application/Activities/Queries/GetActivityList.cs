@@ -15,6 +15,7 @@ public class GetActivityList
     {
         public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested(); //for if cancelled
             return await context.Activities.ToListAsync(cancellationToken);
         }
     }
