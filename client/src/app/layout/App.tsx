@@ -6,16 +6,9 @@ import { useActivities } from "../../lib/hooks/useActivities";
 
 
 function App() {
-  //const [activities,setActivities] = useState<Activity[]>([]);
-  //not need and replace with react query
   const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
   const [editMode, setEditMode] = useState(false);
   const {activities, isPending} = useActivities();
-
-  // useEffect (() => {           also removed cause of qury
-  //   axios.get<Activity[]>('https://localhost:5001/api/activities')
-  //     .then(response=> setActivities(response.data))
-  // },[])
 
   const handleSelectActivity = (id: string) => {
     setSelectedActivity(activities!.find(x => x.id === id));
@@ -30,22 +23,6 @@ function App() {
   }
   const handleFormClose = () => {
     setEditMode(false);
-  }
-  // dont need anymore because of doing with react query
-  // const handleSubmitForm = (activity: Activity) => {
-  //   if (activity.id){
-  //     setActivities(activities.map(x => x.id === activity.id? activity : x))
-  //   }else{
-  //     const newActivity = {...activity, id:activities.length.toString()}
-  //     setSelectedActivity(newActivity);
-  //     setActivities([...activities, newActivity])
-  //   }
-  //   console.log(activity);
-  //   setEditMode(false);
-  // }
-  const handleDelete = (id: string) => {
-    // setActivities(activities.filter(x => x.id !== id))
-    console.log(id);
   }
 
   return (
@@ -64,8 +41,6 @@ function App() {
             editMode={editMode}
             openForm={handleOpenForm}
             closeForm={handleFormClose}
-            //submitForm={handleSubmitForm}
-            deleteActivity={handleDelete}
           />
         )}
       </Container>
