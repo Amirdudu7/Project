@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useEffect } from "react";
 import { activitySchema, type ActivitySchema } from "../../../lib/schemas/activitySchema";
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { Resolver } from "react-hook-form";
 import TextInput from "../../../app/shared/components/TextInput";
 import SelectInput from "../../../app/shared/components/SelectInput";
 import { categoryOptions } from "./categoryOptions";
@@ -14,7 +15,7 @@ import LocationInput from "../../../app/shared/components/LocationInput";
 export default function ActivityForm() {
     const { control, reset, handleSubmit } = useForm<ActivitySchema>({
         mode: 'onTouched',
-        resolver: zodResolver(activitySchema)
+        resolver: zodResolver(activitySchema) as unknown as Resolver<ActivitySchema>
     });
     const navigate = useNavigate();
     const { id } = useParams();
@@ -23,6 +24,7 @@ export default function ActivityForm() {
     useEffect(() => {
         if (activity) reset({
             ...activity,
+            date: activity.date ? new Date(activity.date) : undefined,
             location: {
                 city: activity.city,
                 venue: activity.venue,
@@ -68,7 +70,7 @@ export default function ActivityForm() {
                         control={control}
                         name='category'
                     />
-                    <DateTimeInput label='Date' control={control} name='date' />
+                    <DateTimeInput control={control} name="date" label="Date" />
                 </Box>
 
 

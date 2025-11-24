@@ -1,8 +1,11 @@
 import {z} from 'zod';
 
-const requiredString = (fieldName: string) => z.string()
-    //.string({required_error: `${fieldName} is required`})
-    .min(1, {message: `${fieldName} is required`})
+
+const requiredString = (fieldName: string) =>
+  z.preprocess(
+    (val) => (val === undefined || val === null ? "" : val),
+    z.string().min(1, { message: `${fieldName} is reeeeeequired` })
+  );
 
 export const activitySchema = z.object({
     title: requiredString('Title'),
@@ -18,5 +21,6 @@ export const activitySchema = z.object({
         longitude: z.coerce.number()
     })
 })
+
 
 export type ActivitySchema = z.infer<typeof activitySchema>;
