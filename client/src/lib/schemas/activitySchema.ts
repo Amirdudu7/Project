@@ -2,7 +2,7 @@ import {z} from 'zod';
 
 const requiredString = (fieldName: string) => z.string()
     //.string({required_error: `${fieldName} is required`})
-    .min(1, {message: `${fieldName} is erequired`})
+    .min(1, {message: `${fieldName} is required`})
 
 export const activitySchema = z.object({
     title: requiredString('Title'),
@@ -18,4 +18,5 @@ export const activitySchema = z.object({
         longitude: z.coerce.number()
     })
 })
+
 export type ActivitySchema = z.infer<typeof activitySchema>;
