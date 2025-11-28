@@ -10,7 +10,8 @@ const sleep = (delay: number) => {
 }
 
 const agent = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: import.meta.env.VITE_API_URL,
+    withCredentials: true   //for sending and recive cookies
 });
 
 agent.interceptors.request.use(config => {
