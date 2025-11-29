@@ -2,3 +2,12 @@
     width: 100% !important;
     border: none !important;
 }
+@font-face {
+  font-family: 'Shabnam';
+  src: url('/fonts/Shabnam.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body, * {
+  font-family: 'Shabnam';
+}

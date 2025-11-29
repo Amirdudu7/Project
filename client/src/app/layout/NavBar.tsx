@@ -25,12 +25,12 @@ export default function NavBar() {
             <Box>
               <MenuItem component={NavLink} to='/' sx={{ display: 'flex', gap: 2 }}>
                 <Group fontSize="large" />
-                <Typography variant="h4" fontWeight='bold'> Batmanium </Typography>
+                <Typography variant="h4" fontWeight='bold'> تنها </Typography>
               </MenuItem>
             </Box>
             <Box sx={{ display: 'flex' }}>
               <MenuItemLink to='/activities' >
-                Activities
+                یبس
               </MenuItemLink>
               <MenuItemLink to='/createActivity' >
                 Create Activity
