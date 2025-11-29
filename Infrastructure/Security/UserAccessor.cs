@@ -13,12 +13,12 @@ public class UserAccessor(IHttpContextAccessor httpContextAccessor, AppDbContext
     public async Task<User> GetUserAsync()
     {
         return await dbContext.Users.FindAsync(GetUserId())
-            ?? throw new UnauthorizedAccessException("no user is logged in");
+            ?? throw new UnauthorizedAccessException("No user is logged in");
     }
 
     public string GetUserId()
     {
         return httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier)
-            ?? throw new Exception("no user found");
+            ?? throw new Exception("No user found");
     }
 }
