@@ -47,13 +47,13 @@ export default function UserMenu() {         // ready template at mui site
                     <ListItemIcon>
                         <Add />
                     </ListItemIcon>
-                    <ListItemText>Create Activity</ListItemText>
+                    <ListItemText>ساخت رویداد</ListItemText>
                 </MenuItem>
                 <MenuItem component={Link} to='/profile' onClick={handleClose}>
                     <ListItemIcon>
                         <Person />
                     </ListItemIcon>
-                    <ListItemText>My profile</ListItemText>
+                    <ListItemText>حساب کاربری</ListItemText>
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={() => {
@@ -63,7 +63,7 @@ export default function UserMenu() {         // ready template at mui site
                     <ListItemIcon>
                         <Logout />
                     </ListItemIcon>
-                    <ListItemText>Logout</ListItemText>
+                    <ListItemText>خروج</ListItemText>
                 </MenuItem>
             </Menu>
         </>

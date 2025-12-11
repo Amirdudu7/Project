@@ -45,7 +45,7 @@ export default function ActivityDetailsHeader({activity}: Props) {
                     <Typography variant="h4" sx={{ fontWeight: 'bold' }}>{activity.title}</Typography>
                     <Typography variant="subtitle1">{formatDate(activity.date)}</Typography>
                     <Typography variant="subtitle2">
-                        Hosted by <Link to={`/profiles/${activity.hostId}`} style={{ color: 'white', fontWeight: 'bold' }}>
+                        میزبانی توسط <Link to={`/profiles/${activity.hostId}`} style={{ color: 'white', fontWeight: 'bold' }}>
                             {activity.hostDisplayName}
                         </Link>
                     </Typography>
@@ -61,7 +61,7 @@ export default function ActivityDetailsHeader({activity}: Props) {
                                 onClick={() => updateAttendance.mutate(activity.id)}
                                 disabled={updateAttendance.isPending}
                             >
-                                {activity.isCancelled ? 'Re-activate Activity' : 'Cancel Activity'}
+                                {activity.isCancelled ? 'فعال کردن ' : 'کنسل کردن رویداد'}
                             </StyledButton>
                             <StyledButton
                                 variant="contained"
@@ -70,7 +70,7 @@ export default function ActivityDetailsHeader({activity}: Props) {
                                 to={`/manage/${activity.id}`}
                                 disabled={activity.isCancelled}
                             >
-                                Manage Event
+                                مدیریت رویداد
                             </StyledButton>
                         </>
                     ) : (
@@ -80,7 +80,7 @@ export default function ActivityDetailsHeader({activity}: Props) {
                             onClick={() => updateAttendance.mutate(activity.id)}
                             disabled={updateAttendance.isPending || activity.isCancelled}
                         >
-                            {activity.isGoing ? 'Cancel Attendance' : 'Join Activity'}
+                            {activity.isGoing ? 'خارج شدن از رویداد' : 'ملحق شدن'}
                         </StyledButton>
                     )}
                 </Box>

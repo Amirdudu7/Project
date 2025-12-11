@@ -43,22 +43,22 @@ export default function LoginForm() {
             <Box display='flex' alignItems='center' justifyContent='center' 
                 gap={3} color='secondary.main'>
                 <LockOpen fontSize="large" />
-                <Typography variant="h4">Sign in</Typography>
+                <Typography variant="h4">ورود</Typography>
             </Box>
-            <TextInput label='Email' control={control} name='email' />
-            <TextInput label='Password' type='password' control={control} name='password' />
+            <TextInput label='ایمیل' control={control} name='email' />
+            <TextInput label='رمز عبور' type='password' control={control} name='password' />
             <Button 
                 type='submit' 
                 disabled={!isValid || isSubmitting}
                 variant="contained"
                 size="large"
             >
-                Login
+                ورود
             </Button>
             <Typography sx={{textAlign: 'center'}}>
-                Don't have an account? 
+                حساب نداری؟
                 <Typography sx={{ml: 2}} component={Link} to='/register' color="primary">
-                    Sign up
+                    ثبتنام
                 </Typography>
             </Typography>
         </Paper>

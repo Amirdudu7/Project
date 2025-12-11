@@ -44,23 +44,23 @@ export default function RegisterForm() {
             <Box display='flex' alignItems='center' justifyContent='center' 
                 gap={3} color='secondary.main'>
                 <LockOpen fontSize="large" />
-                <Typography variant="h4">Register</Typography>
+                <Typography variant="h4">ثبتنام</Typography>
             </Box>
-            <TextInput label='Email' control={control} name='email' />
-            <TextInput label='Display name' control={control} name='displayName' />
-            <TextInput label='Password' type='password' control={control} name='password' />
+            <TextInput label='ایمیل' control={control} name='email' />
+            <TextInput label='تام' control={control} name='displayName' />
+            <TextInput label='رمز' type='password' control={control} name='password' />
             <Button 
                 type='submit' 
                 disabled={!isValid || isSubmitting}
                 variant="contained"
                 size="large"
             >
-                Register
+                ثبتنام
             </Button>
             <Typography sx={{textAlign: 'center'}}>
-                Already have an account? 
+                حساب داری؟
                 <Typography sx={{ml: 2}} component={Link} to='/login' color="primary">
-                    Sign in
+                    ورود
                 </Typography>
             </Typography>
         </Paper>

@@ -19,7 +19,7 @@ export default function ActivityDetailsSidebar({ activity }: Props) {
                 }}
             >
                 <Typography variant="h6">
-                    {activity.attendees.length} people going
+                    {activity.attendees.length} نفر شرکت کرده اند
                 </Typography>
             </Paper>
             <Paper sx={{ padding: 2 }}>
@@ -32,7 +32,7 @@ export default function ActivityDetailsSidebar({ activity }: Props) {
                                         <Avatar
                                             variant="rounded"
                                             alt={attendee.displayName + ' image'}
-                                            src={attendee.imageUrl}
+                                            src={`/images/${attendee.displayName}.png`}
                                             sx={{ width: 75, height: 75, mr: 3 }}
                                         />
                                     </ListItemAvatar>

@@ -10,22 +10,23 @@ type Props = {
 }
 export default function ActivityCard({ activity }: Props) {
   //const {deleteActivity} = useActivities(); no need here
-  const label = activity.isHost ? 'You are hosting' : 'You are going';
+  const label = activity.isHost ? 'شما میزبانی' : 'شما مهمان هستید';
   const color = activity.isHost ? 'secondary' : activity.isGoing ? 'warning' : 'default';
 
   return (
     <Card elevation={3} sx={{ borderRadius: 3 }}>
       <Box display='flex' alignItems='center' justifyContent='space-between'>
-        <CardHeader
-          avatar={<Avatar sx={{ height: 80, width: 80 }} />}
+        <CardHeader 
+          avatar={<Avatar src="/images/user.png" sx={{ height: 80, width: 80}} />}
           title={activity.title}
           titleTypographyProps={{
             fontWeight: 'bold',
-            fontSize: 20
+            fontSize: 20,
+            paddingRight:3
           }}
           subheader={
             <>
-              Hosted by{' '}
+              میزبانی توسط{' '}
               <Link to={`/profiles/${activity.hostId}`}>
                 {activity.hostDisplayName}
               </Link>
@@ -33,7 +34,7 @@ export default function ActivityCard({ activity }: Props) {
           }
         />
         <Box display='flex' flexDirection='column' gap={2} mr={2}>
-          {(activity.isHost || activity.isGoing) && <Chip variant="outlined" label={label} color={color} sx={{ borderRadius: 2 }} />}
+          {(activity.isHost || activity.isGoing) && <Chip variant="outlined" label={label} color={color} sx={{ borderRadius: 2 ,marginLeft:5}} />}
           {activity.isCancelled && <Chip label='Cancelled' color='error' sx={{ borderRadius: 2 }} />}
         </Box>
       </Box>
@@ -50,7 +51,7 @@ export default function ActivityCard({ activity }: Props) {
           <Typography variant="body2">{activity.venue}</Typography>
         </Box>
         <Divider />
-        <Box display='flex' gap={2} sx={{ backgroundColor: 'grey.200', py: 3, pl: 3 }}>
+        <Box display='flex' gap={2} paddingRight={5} sx={{ backgroundColor: 'grey.200', py: 3, pl: 3 }}>
           {activity.attendees.map(att => (
             <AvatarPopover profile={att} key={att.id} />
           ))}
@@ -65,7 +66,7 @@ export default function ActivityCard({ activity }: Props) {
           size="medium" variant="contained"
           sx={{ display: 'flex', justifySelf: 'self-end', borderRadius: 3 }}
         >
-          View</Button>
+          مشاهده</Button>
       </CardContent>
 
     </Card>

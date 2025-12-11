@@ -12,7 +12,7 @@ export default function ActivityDetailsChat() {
                     padding: 2
                 }}
             >
-                <Typography variant="h6">Chat about this event</Typography>
+                <Typography variant="h6">نظر نداری؟</Typography>
             </Box>
             <Card>
                 <CardContent>
@@ -37,11 +37,11 @@ export default function ActivityDetailsChat() {
                                         Bob
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary">
-                                        2 hours ago
+                                        2ساعت پیش
                                     </Typography>
                                 </Box>
 
-                                <Typography sx={{ whiteSpace: 'pre-wrap' }}>Comment goes here</Typography>
+                                <Typography sx={{ whiteSpace: 'pre-wrap' }}>کامنت بگذارید</Typography>
                             </Box>
                         </Box>
                     </Box>

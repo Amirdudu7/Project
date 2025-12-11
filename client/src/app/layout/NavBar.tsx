@@ -25,15 +25,15 @@ export default function NavBar() {
             <Box>
               <MenuItem component={NavLink} to='/' sx={{ display: 'flex', gap: 2 }}>
                 <Group fontSize="large" />
-                <Typography variant="h4" fontWeight='bold'> تنها </Typography>
+                <Typography variant="h4" fontWeight='bold'> سفربوک </Typography>
               </MenuItem>
             </Box>
             <Box sx={{ display: 'flex' }}>
               <MenuItemLink to='/activities' >
-                یبس
+                رویدادها
               </MenuItemLink>
               <MenuItemLink to='/createActivity' >
-                Create Activity
+                ساخت رویداد
               </MenuItemLink>
               <MenuItemLink to='/counter' >
                 Counter
@@ -47,8 +47,8 @@ export default function NavBar() {
                 <UserMenu/>
               ) : (
                 <>
-                  <MenuItemLink to="/login">login</MenuItemLink>
-                  <MenuItemLink to="/register">Register</MenuItemLink>
+                  <MenuItemLink to="/login">ورود</MenuItemLink>
+                  <MenuItemLink to="/register">ثبتنام</MenuItemLink>
                 </>
               )}
             </Box>

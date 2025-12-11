@@ -22,9 +22,9 @@ export default function HomePage() {
       <Box sx={{display: 'flex', alignItems:'center', alignContent:'center', color:'white', gap:3}}
       >
         <Group sx={{height: 100, width:110}} />
-        <Typography variant="h1">Batmanium</Typography>
+        <Typography variant="h1">سفربوک</Typography>
       </Box>
-      <Typography variant="h2">Welcome to Batmanium</Typography>
+      <Typography variant="h2">به گشت و سفر خوش آمدید</Typography>
       <Button 
         component={Link}
         to='/activities'
@@ -32,7 +32,7 @@ export default function HomePage() {
         variant="contained"
         sx={{height: 80, borderRadius:4, fontSize:'1.5rem'}}
       >
-        Take me to the Batmaniiuuuuuuuuuummmmm</Button>
+        منو ببر به سایت</Button>
     </Paper>
   )
 }

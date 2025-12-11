@@ -12,17 +12,17 @@ export default function ActivityFilters() {
                 <Typography variant="h6" sx={{display: 'flex', 
                         alignItems:'center', mb:1, color:'primary.main'}}>
                     <FilterList sx={{mr: 1}} />
-                    Filters
+                    فیلتر
                 </Typography>
                 <MenuList>
                     <MenuItem>
-                        <ListItemText primary="All events"/>
+                        <ListItemText primary="تمام رویدادها"/>
                     </MenuItem>
                     <MenuItem>
-                        <ListItemText primary="I'm Going"/>
+                        <ListItemText primary="مهمانی"/>
                     </MenuItem>
                     <MenuItem>
-                        <ListItemText primary="I'm hosting"/>
+                        <ListItemText primary="میزبانی"/>
                     </MenuItem>
                 </MenuList>
             </Box>
@@ -31,7 +31,7 @@ export default function ActivityFilters() {
             <Typography variant="h6" 
                 sx={{display: 'flex', alignItems: 'center', mb: 1, color: 'primary.main'}}>
                 <Event sx={{mr: 1}} />
-                Select date
+                تاریخ
             </Typography>
             <Calendar/>
         </Box>

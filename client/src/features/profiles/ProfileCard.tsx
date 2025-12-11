@@ -21,9 +21,9 @@ export default function ProfileCard({ profile }: Props) {
             >
                 <CardMedia
                     component='img'
-                    src={profile?.imageUrl || '../../../public/images/user.png'} 
-                    //src={`/images/${profile.displayName}.png`}
-                    //onError={(e) => (e.currentTarget.src = '/images/user.png')}
+                    //src={profile?.imageUrl || '../../../public/images/user.png'} 
+                    src={`/images/${profile.displayName}.png`}
+                    onError={(e) => (e.currentTarget.src = '/images/user.png')}
                     sx={{ width: 200, zIndex: 50 }}
                     alt={profile.displayName + ' image'}
                 />

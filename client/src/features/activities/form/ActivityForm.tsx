@@ -70,20 +70,20 @@ export default function ActivityForm() {
                         control={control}
                         name='category'
                     />
-                    <DateTimeInput control={control} name="date" label="Date" />
+                    <DateTimeInput control={control} name="date" label="تاریخ" />
                 </Box>
 
 
-                <LocationInput control={control} label='Enter the location' name="location" />
+                <LocationInput control={control} label='موقعیت را وارد کنید' name="location" />
 
                 <Box display='flex' justifyContent='end' gap={3}>
-                    <Button color='inherit'>Cancel</Button>
+                    <Button color='inherit'>لغو</Button>
                     <Button
                         type="submit"
                         color='success'
                         variant="contained"
                         disabled={updateActivity.isPending || createActivity.isPending}
-                    >Submit</Button>
+                    >ثبت</Button>
                 </Box>
             </Box>
         </Paper>
